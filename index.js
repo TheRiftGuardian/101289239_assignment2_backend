@@ -72,6 +72,7 @@ app.delete('/api/v1/employees/:id', async (req, res) => {
 	try {
 		const employee = await employeeModel.findByIdAndDelete(req.params.id);
 		res.status(204).send('Employee resource is deleted.');
+		console.log('Employee resource is deleted.');
 	} catch (err) {
 		res.status(500).send(err);
 	}
